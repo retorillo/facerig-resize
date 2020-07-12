@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)Microsoft.Cpp.default.props" />
+  <PropertyGroup>
+    <ProjectName>facerig-resize</ProjectName>
+    <PlatformToolset>v141</PlatformToolset>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <OutDir>$(Configuration.toLower())\$(PlatformTarget)\</OutDir>
+    <IntDir>$(OutDir)cache\</IntDir>
+    <TLogLocation>$(IntDir)</TLogLocation>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <ClCompile Include="app.cpp" />
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <Target Name="AfterBuild">
+    <SetEnv Prefix="false" Name="OutDir" Value="$(OutDir)" />
+    <SetEnv Prefix="false" Name="ProjectName" Value="$(ProjectName)" />
+    <SetEnv Prefix="false" Name="BuildVersion" Value="$(BuildVersion)" />
+    <SetEnv Prefix="false" Name="PlatformTarget" Value="$(PlatformTarget)" />
+    <Exec Command="pack.bat" />
+  </Target>
+</Project>

@@ -1,0 +1,63 @@
+#pragma code_page(65001) // utf-8
+
+0 ICON "ico/app.ico"
+
+#define APP_TITLE             1
+#define SPLASH_SCREEN         2
+#define FAILED_GET_PLACEMENT  3
+#define FAILED_GET_DPI        4
+#define FAILED_GET_STYLE      5
+#define FAILED_SET_STYLE      6
+#define FAILED_GET_EXSTYLE    7
+#define FAILED_OVERLAPPED     8
+#define FAILED_SET_WINDOWRECT 9
+#define FAILED_SET_PLACEMENT  10
+#define INFO_WAITING          11
+#define INFO_ADJUSTED         12
+#define INFO_PRESSANYKEY      13
+
+#define SPLASH_SCREEN_CONTENT "\
+.  ___                       __                               __             \n\
+..'  _.---.-.----.-----.----|__.-----.______.----.-----.-----|__.-----.-----.\n\
+.|   _|  _  |  __|  -__|   _|  |  _  |______|   _|  -__|__ --|  |-- __|  -__|\n\
+.|__| |___._|____|_____|__| |__|___  |      |__| |_____|_____|__|_____|_____|\n\
+.                              |_____|                                       \n\
+.                                                                            \n\
+.                  (C) Retorillo / Licensed under the MIT                    \n\
+.                                                                            \n"
+
+STRINGTABLE
+LANGUAGE 0x0009, 0x0 // en
+BEGIN
+APP_TITLE             L"facerig-resize"
+SPLASH_SCREEN         SPLASH_SCREEN_CONTENT
+FAILED_GET_PLACEMENT  L"Failed to get window placement"
+FAILED_GET_DPI        L"Failed to get window DPI"
+FAILED_GET_STYLE      L"Failed to get window style"
+FAILED_SET_STYLE      L"Failed to set window style"
+FAILED_GET_EXSTYLE    L"Failed to get extended style"
+FAILED_OVERLAPPED     L"Cannot adjust OVERLAPPED window"
+FAILED_SET_WINDOWRECT L"Failed to adjust window rect"
+FAILED_SET_PLACEMENT  L"Failed to set window placement"
+INFO_WAITING          L"Waiting window"
+INFO_ADJUSTED         L"Window is successfully adjusted"
+INFO_PRESSANYKEY      L"Press any key to exit"
+END
+
+STRINGTABLE
+LANGUAGE 0x0011, 0x0 // ja
+BEGIN
+APP_TITLE             L"facerig-resize"
+SPLASH_SCREEN         SPLASH_SCREEN_CONTENT
+FAILED_GET_PLACEMENT  L"ウィンドウ位置の取得に失敗しました"
+FAILED_GET_DPI        L"ウィンドウDPIの取得に失敗しました"
+FAILED_GET_STYLE      L"ウィンドウスタイルの取得に失敗しました"
+FAILED_SET_STYLE      L"ウィンドウスタイルの設定に失敗しました"
+FAILED_GET_EXSTYLE    L"ウィンドウ拡張スタイルの取得に失敗しました"
+FAILED_OVERLAPPED     L"OVERLAPPEDスタイルのウィンドウは対応していません"
+FAILED_SET_WINDOWRECT L"ウィンドウ矩形の設定に失敗しました"
+FAILED_SET_PLACEMENT  L"ウィンドウ位置の設定に失敗しました"
+INFO_WAITING          L"ウィンドウを待っています"
+INFO_ADJUSTED         L"ウィンドウは正常に調節されています"
+INFO_PRESSANYKEY      L"何かのキーを押すと終了します"
+END
